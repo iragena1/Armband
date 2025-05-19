@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Delete user from database
         $delete = $conn->prepare("DELETE FROM register WHERE id = ?");
-        $deletet->bind_param("i", $id);
+        $delete->bind_param("i", $id);
         $delete->execute();
         $delete->close();
     }
@@ -41,41 +41,114 @@ $result = $conn->query("SELECT id, username, password FROM register");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
+ .form-container {
+    width: 250px;
+    background-color: skyblue;
+    padding: 10px;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    
+     font-size: 12px
+}
+
+.form-container h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 13
+}
+
+.form-container h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+}
+
+.form-container label {
+    display: block;
+    font-weight: bold;
+    margin-top:5px;
+    color: #444;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 80%;
+    padding:5px;
+    margin-top:2px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-container button {
+    margin-top: 5px;
+    margin-right: 20px;
+    padding:8px 16px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #0088cc;
+}
+
+.form-container button:last-child {
+    background-color: #ccc;
+    color: black;
+}
+
+.form-container button:last-child:hover {
+    background-color: #bbb;
+}
+
+
         h2 {
             text-align: center;
            text-color:blue;
         }
         table {
-            width: 80%;
+            width: 60%;
             margin: 0 auto;
             border-collapse: collapse;
             background-color:gray;
         }
-        th, td {
+        td{
             padding: 10px;
             border: 1px solid #aaa;
             text-align: center;
+         
            
+        }
+        th{
+            background-color:skyblue;
         }
         .table-wrapper {
             display: flex;
             justify-content: center;
         }
         a {
-            color: #007bff;
+           background-color:blue;
             text-decoration: none;
+            padding:5px 10px
         }
         a:hover {
             text-decoration: underline;
+           
         }
-        .form-container {
-            width: 50%;
-            margin: 20px auto;
-        }
+        
     </style>
 </head>
 <body>
