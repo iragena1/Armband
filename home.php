@@ -113,6 +113,11 @@ $result = $conn->query("SELECT id, username, password FROM register");
 .form-container button:last-child:hover {
     background-color: #bbb;
 }
+body {
+            font-family: Arial;
+            margin: 30px;
+            background-color:steelblue;
+        }
 
 
         h2 {
