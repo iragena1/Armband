@@ -20,7 +20,7 @@ $result = $conn->query($sql);
         body {
             font-family: Arial;
             margin: 30px;
-            background-color: #f0f8ff;
+            background-color: steelblue;
         }
         h2 {
             text-align: center;
